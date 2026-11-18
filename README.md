@@ -1,100 +1,123 @@
-# Sublime
+<p align="center">
+  <img src="docs/banner.png" alt="SUBLIME — free, open-source animated subtitles" width="100%">
+</p>
 
-**Éditeur de sous-titres animés style TikTok, gratuit, open source et 100 % dans ton navigateur.**
-Glisse une vidéo, l'IA écrit les sous-titres, tu choisis un style, tu exportes. Rien à installer, aucune vidéo envoyée sur un serveur.
+<p align="center">
+  <b>Turn any video into TikTok-style animated subtitles — in your browser, for free.</b><br>
+  AI transcription with word-by-word timing, 8 ready-made styles, fast MP4 export. Your video never leaves your device.
+</p>
 
-[🇬🇧 English below](#english)
+<p align="center">
+  <a href="https://pixelnorth.github.io/sublime/"><b>▶ Try it now</b></a> ·
+  <a href="#features">Features</a> ·
+  <a href="#run-it-locally">Run locally</a> ·
+  <a href="#privacy">Privacy</a> ·
+  <a href="#contributing">Contributing</a> ·
+  <a href="README.fr.md">Français</a>
+</p>
 
-![Interface de Sublime](docs/screenshot.png)
+<p align="center">
+  <img alt="Status" src="https://img.shields.io/badge/status-beta-8b5cf6">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-8b5cf6">
+  <img alt="No build step" src="https://img.shields.io/badge/build-none-8b5cf6">
+  <img alt="Runs in browser" src="https://img.shields.io/badge/runs-100%25%20in%20browser-8b5cf6">
+</p>
 
-## Fonctionnalités
+![SUBLIME editor](docs/screenshot.png)
 
-### Transcription IA, sur ton ordinateur
-- Whisper (OpenAI) tourne **dans le navigateur** : ta vidéo ne quitte jamais ton PC.
-- 3 modèles : **Ultra précis** (large-v3-turbo, carte graphique), **Précis** et **Rapide**.
-- Timing **mot par mot**, pour surligner chaque mot au moment où il est dit.
-- Français, anglais, espagnol, allemand, italien, portugais, ou détection automatique.
+## Why SUBLIME?
 
-### Orthographe
-- **Dictionnaire perso** : tu écris `Etsy`, l'IA ne mettra plus « ETIS ». Corrige aussi les mots qui sonnent pareil.
-- Morceaux de mots recollés automatiquement (`aujourd'hui`, `l'homme`, `-t-il`).
-- Correcteur du navigateur dans l'éditeur (soulignement rouge + suggestions au clic droit).
-- Rechercher / remplacer dans tous les sous-titres.
+Animated captions keep viewers watching, but most tools that make them are paid, need an account, or upload your footage to a server. SUBLIME does it all locally: open the page, drop a video, export. No sign-up, no watermark, no upload.
 
-### Édition
-- Texte et timings modifiables directement dans la liste.
-- **Timeline** avec piste de sous-titres et miniatures vidéo : glisse un bloc pour le déplacer, tire ses bords pour l'allonger.
-- Couper, scinder, fusionner, dupliquer, marqueurs, annuler / rétablir.
-- Import et export **.srt**.
+## Features
 
-### Styles
-- **8 modèles** prêts à l'emploi (Hormozi, Néon, Comic, Box…) + tes propres modèles enregistrés.
-- Police, graisse, taille, couleurs, contour, ombre, arrière-plan, marges.
-- Animations : Pop, Reveal mot par mot, Fondu, Glisse. Mot actif en couleur ou en boîte.
-- Formats **16:9, 9:16, 1:1, 4:5**.
+**AI transcription, on your machine**
+- [Whisper](https://github.com/openai/whisper) runs in the browser through [Transformers.js](https://github.com/huggingface/transformers.js) (WebGPU when available, WebAssembly otherwise).
+- Three models: **Ultra accurate** (large-v3-turbo), **Accurate** (small), **Fast** (base).
+- **Word-level timestamps**, so each word lights up exactly when it is spoken.
+- French, English, Spanish, German, Italian, Portuguese, or automatic detection.
 
-### Export rapide
-- MP4 encodé par la **carte graphique** (WebCodecs) : bien plus rapide que la durée de la vidéo.
-- Fenêtre **« Enregistrer sous »** : tu choisis le dossier sur ton PC.
-- Qualité et images par seconde réglables. Export `.srt` et image `.png` aussi.
+**Spelling you can trust**
+- **Personal dictionary**: add `Etsy` once and it stops being transcribed as "ETIS". Sound-alike words are fixed too.
+- Word fragments are re-joined automatically (`aujourd'` + `hui`, `l'` + `homme`).
+- Browser spell-check in the editor, plus find & replace across all subtitles.
 
-### Et aussi
-- **Projets** sauvegardés automatiquement dans le navigateur, vidéo comprise.
-- **Statistiques** : mots par minute, lignes trop rapides à lire, activité.
-- Interface en **français, anglais et espagnol**. Thème sombre ou clair.
-- Raccourcis : `Espace` lecture, `S` scinder, `M` marqueur, `Suppr`, `Ctrl+Z` / `Ctrl+Y`, `Ctrl+S`.
+**Editing**
+- Edit text and timings directly in the subtitle list.
+- **Timeline** with a subtitle track and video thumbnails: drag blocks to move them, pull their edges to resize.
+- Cut, split, merge, duplicate, markers, undo / redo.
+- `.srt` import and export.
 
-## Utiliser
+**Styles & animation**
+- **8 built-in styles** plus your own saved templates.
+- Font, weight, size, colors, outline, shadow, background box, padding.
+- Entrance animations: **Pop, Reveal (word by word), Fade, Slide**. Active word highlighted with a color or a box.
+- **16:9, 9:16, 1:1 and 4:5** output.
 
-**En ligne :** https://pixelnorth.github.io/sublime/
+**Export**
+- **GPU-accelerated MP4 export** (WebCodecs via [Mediabunny](https://github.com/Vanilagy/mediabunny)), usually much faster than real time.
+- **"Save as" dialog** to choose where the file goes (Chrome / Edge).
+- Adjustable quality and frame rate. Also exports `.srt` and `.png` frames.
 
-**En local :** il faut un petit serveur (un double-clic sur `index.html` ne suffit pas).
+**Everything else**
+- **Projects auto-saved** in your browser, video included.
+- **Readability stats**: words per minute, lines that are too fast to read.
+- Interface in **English, French and Spanish**. Dark and light themes.
+- Shortcuts: `Space` play · `S` split · `M` marker · `Del` delete · `Ctrl+Z` / `Ctrl+Y` · `Ctrl+S` save.
+
+## Run it locally
+
+No install, no build. You only need a static file server (opening `index.html` directly does not work, because of ES modules and Web Workers).
 
 ```bash
+git clone https://github.com/pixelnorth/sublime.git
+cd sublime
 python -m http.server 5173
 ```
 
-Puis ouvre http://localhost:5173.
+Then open http://localhost:5173.
 
-**Navigateur conseillé :** Chrome ou Edge récent. Firefox et Safari marchent, mais sans la fenêtre « Enregistrer sous », et l'export peut y être plus lent.
+## Privacy
 
-> Au premier usage, le modèle d'IA se télécharge une fois (80 Mo à 1 Go selon le modèle), puis reste en cache.
+- Your **video and audio are processed entirely on your device**. Nothing is uploaded.
+- The page downloads only static files: the Whisper model from Hugging Face (once, then cached), two libraries from jsDelivr, and fonts from Google Fonts.
+- Projects, templates and settings are stored **in your browser** (IndexedDB / localStorage). Clearing site data deletes them.
 
-## Technique
+## Known limitations
 
-HTML, CSS et JavaScript, **sans build ni dépendance à installer**.
+SUBLIME is in **beta**. Please [report what breaks](https://github.com/pixelnorth/sublime/issues).
 
-| Fichier | Rôle |
+- Tested on recent **Chrome and Edge**. Firefox and Safari are not tested yet; the "Save as" dialog is Chromium-only.
+- The **Ultra** model is a ~1 GB one-time download and needs a GPU (WebGPU) to be fast. On weaker machines, pick **Fast** or **Accurate**.
+- Very large videos may not fit in browser storage; the project then stays open but is not saved.
+- If fast export is not supported, SUBLIME falls back to a slower real-time export.
+- Transcription quality depends on the audio. Use the personal dictionary for names and brands.
+
+## Tech stack
+
+Plain **HTML, CSS and JavaScript**: no framework, no bundler, no dependencies to install.
+
+| File | Role |
 |---|---|
 | `index.html` | Interface |
-| `style.css` | Thèmes sombre et clair |
-| `app.js` | Éditeur, rendu des sous-titres, projets, export |
-| `worker.js` | Transcription Whisper (Transformers.js) |
-| `i18n.js` | Traductions de l'interface |
+| `style.css` | Dark and light themes |
+| `app.js` | Editor, subtitle rendering, projects, export |
+| `worker.js` | Whisper transcription in a Web Worker |
+| `i18n.js` | Interface translations |
 
-Bibliothèques chargées depuis un CDN : [Transformers.js](https://github.com/huggingface/transformers.js) pour la transcription, [Mediabunny](https://github.com/Vanilagy/mediabunny) pour l'export vidéo.
+## Contributing
 
-**Ajouter une langue :** copie le bloc `en` dans `i18n.js` et traduis les textes.
+Bug reports, ideas, new subtitle styles and translations are very welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
-## Contribuer
+**Add a language:** copy the `en` block in `i18n.js` and translate the values.
 
-Les issues et pull requests sont les bienvenues : nouveaux styles, nouvelles langues, corrections.
+## License
 
-## Licence
-
-MIT. Libre d'utilisation, de modification et de partage.
+[MIT](LICENSE). Free to use, modify and share.
 
 ---
 
-## English
-
-**Free, open-source TikTok-style animated subtitle editor that runs 100% in your browser.** Drop a video, AI writes the subtitles word by word, pick a style, export a fast MP4. Your video never leaves your computer.
-
-- Local Whisper transcription (3 models, word-level timing, 6 languages + auto)
-- Custom dictionary for brand names and proper nouns, automatic word re-joining, spell check
-- Timeline editing (drag, resize, split, merge, markers, undo), `.srt` import / export
-- 8 built-in styles + your own templates, Pop / Reveal / Fade / Slide animations, 16:9 · 9:16 · 1:1 · 4:5
-- GPU-accelerated MP4 export with a "Save as" dialog
-- Projects auto-saved in the browser, readability stats, UI in English, French and Spanish
-
-Run locally with `python -m http.server 5173` and open http://localhost:5173 (Chrome or Edge recommended). MIT license.
+<p align="center">
+  If SUBLIME saves you time, a ⭐ helps other creators find it.<br>
+  <a href="https://pixelnorth.github.io/sublime/">pixelnorth.github.io/sublime</a> · <a href="https://github.com/pixelnorth/sublime">github.com/pixelnorth/sublime</a>
+</p>
