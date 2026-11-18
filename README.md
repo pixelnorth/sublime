@@ -46,7 +46,7 @@ Glisse une vidéo, l'IA écrit les sous-titres, tu choisis un style, tu exportes
 
 ## Utiliser
 
-**En ligne :** https://legameurdupond-dot.github.io/sublime/
+**En ligne :** https://pixelnorth.github.io/sublime/
 
 **En local :** il faut un petit serveur (un double-clic sur `index.html` ne suffit pas).
 
